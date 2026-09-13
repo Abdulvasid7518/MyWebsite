@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>🎮 My First Game</h1>
+
+    <p>Guess a number between 1 and 10!</p>
+
+    <input id="guess" type="number">
+
+    <button onclick="checkGuess()">
+        Guess
+    </button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        let number = Math.floor(Math.random() * 10) + 1;
+
+        function checkGuess() {
+
+            let guess = Number(
+                document.getElementById("guess").value
+            );
+
+            if (guess === number) {
+                document.getElementById("result").innerHTML =
+                    "🎉 You Win!";
+            }
+            else {
+                document.getElementById("result").innerHTML =
+                    "❌ Try Again!";
+            }
+        }
+    </script>
+
+</body>
+</html>
